@@ -1,0 +1,94 @@
+Estefanny Jaimes León
+
+Ejercicio 1: 
+1) Cree una funcion recursiva que reciba un entero, y retorne cuantos digitos de este numero son multiplos de 2 y de 4 e ignorar el 0. 
+
+#modulo 10 es para sacar el ultimo numero de un digito
+# el div // borra el ultimo digito de los digitos
+
+int multiploCuatroDos (int num, cont= 0) 
+	if  (num == 0):
+		retornar cont
+	end if
+	
+        x= num % 10
+
+	if (x % 4== 0 and x%2 ==0):
+		cont += 1
+	end if 
+
+        num = num // 10
+
+        return multiploCuatroDos(num,cont)
+end multiploCuatroDos
+
+2) Cree una funcion no recursiva que invierta solo la mitad de un string (la segunda mitad)
+     
+     string invertirPalabra (string, palabra=0)
+	   if palabra == len(string)):
+		return ""
+	   end if 
+	   if ( palabra < len (string)//2):
+		return string[palabra]+ invertirPalabra (string palabra+1)
+	   end if
+           else:
+		return invertirPalabra (string palabra+1) + string [palabra]
+	   end else
+      end invertirPalabra
+
+3) Cree una funcion recursiva que calcule las sumatoria de todos los numeros impares de una matrix cuadrada.
+
+	int ejercicioTres(int matriz,int i=0,int j=0,int suma=0)
+
+		if (i == len(matriz)):
+			return suma
+		end if 
+
+		current_element= matriz[i][j]
+		if (matriz[i][j]%2 !=0):
+			suma+= matriz[i][j]
+		end if 
+
+		if(j < len(matriz) - 1):
+			return ejercicioTres(matriz, i, j+1, suma)
+		end if
+		else
+			return ejercicioTres(matriz,i+1,0,suma)
+		end else 
+	end ejercicioTres
+
+
+4) Cree una funcion recursiva que reciba una lista, un elemento y un indice y retorne si el elemento en la lista y en la posicion dada.
+
+ int ejercicioCuatro (lista, posicion, elemento, i=0)
+	if (lista.len+1 == i):
+		return false
+	end if
+	if (0 <= posicion < lista.len+1):
+ 		if (lista[i] == elemento and i == posicion):
+			return true
+		end if
+		return ejercicioCuatro (lista, posicion, elemento, i=0)
+	end if
+	else
+		return false
+	end else
+ end ejercicioCuatro
+
+
+
+
+5) Cree una función recursiva que reciba un string alfanumérico (letras y números) y que extraiga los dígitos del string y retorne el número formado por todos los dígitos. El retorno será de tipo entero.
+
+String alfanumerico (String numero, idx=0, sum=0)
+	if (idc == len(numero)):
+		return sum
+ 	end if
+        current_char = numero[idx]
+	if (current_char.isdigit()):
+		sum = sum*10+int(current_char)
+	end if
+	return alfanumerico (string numero, idx + 1, sum)
+ 
+end alfanumerico
+
